@@ -5,9 +5,10 @@
         <nav class="flex items-center justify-between flex-wrap p-3">
           <div class="flex justify-around">
             <img
+              class="w-16 h-16"
               src="../public/moviedb_logo.png"
-              width="50"
-              height="50"
+              width="400"
+              height="400"
               alt="themoviedb_logo"
             />
             <div
