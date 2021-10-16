@@ -7,7 +7,7 @@ import movie from "./modules/movie";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
@@ -17,3 +17,5 @@ export default new Vuex.Store({
     movie,
   },
 });
+
+export default store;

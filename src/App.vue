@@ -5,7 +5,7 @@
         <nav class="flex items-center justify-between flex-wrap p-3">
           <div class="flex justify-around">
             <img
-              src="https://pbs.twimg.com/profile_images/1243623122089041920/gVZIvphd_400x400.jpg"
+              src="../public/moviedb_logo.png"
               width="50"
               height="50"
               alt="themoviedb_logo"
@@ -75,7 +75,7 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 
-export default {
+const App = {
   name: "App",
   computed: {
     ...mapGetters(["languageCurrent", "languageList"]),
@@ -93,4 +93,6 @@ export default {
     this.fetchLanguages();
   },
 };
+
+export default App;
 </script>

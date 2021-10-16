@@ -4,6 +4,7 @@ const state = {
   current: {},
   list: [],
 };
+
 const mutations = {
   SET_CURRENT_LANGUAGE(state, { lang }) {
     state.current = state.list.find((langs) => langs.value === lang);
@@ -17,6 +18,7 @@ const mutations = {
     });
   },
 };
+
 const actions = {
   changeCurrentLanguage: ({ commit }, lang) => {
     commit("SET_CURRENT_LANGUAGE", {
@@ -46,6 +48,7 @@ const getters = {
     return state.list.sort((a, b) => (a.label > b.label ? 1 : -1));
   },
 };
+
 export default {
   state,
   mutations,
