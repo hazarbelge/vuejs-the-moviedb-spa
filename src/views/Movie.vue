@@ -168,7 +168,7 @@
                 :is="video.site"
                 v-bind:video="video"
                 v-bind:key="index"
-                class="px-2 w-full sm:w-1/2 md:w-1/3 mb-2"
+                class="px-2 w-full sm:w-1/2 md:w-1/2 mb-2"
               />
             </div>
             <div
