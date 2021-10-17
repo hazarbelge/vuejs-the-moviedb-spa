@@ -17,7 +17,7 @@
       :autoplay="!0"
       :autoplayTimeout="3000"
       :autoplayHoverPause="!0"
-      :paginationPadding="5"
+      :paginationPadding="6"
       paginationColor="#cbd5e0"
       paginationActiveColor="#44337a"
     >
