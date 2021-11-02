@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="tv-home">
     <div
       class="
         mb-4
@@ -21,12 +21,12 @@
       paginationColor="#cbd5e0"
       paginationActiveColor="#44337a"
     >
-      <slide v-for="(movie, index) in trending" :key="index" class="flex">
-        <movie-preview :movie="movie"></movie-preview>
+      <slide v-for="(tv, index) in trendingTv" :key="index" class="flex">
+        <TvPreview :tv="tv"></TvPreview>
       </slide>
     </carousel>
     <div
-      v-if="!moviesLoading"
+      v-if="!tvSeriesLoading"
       class="
         mb-4
         pb-1
@@ -36,9 +36,9 @@
         text-white
       "
     >
-      Latest Movie
+      Latest Tv
     </div>
-    <latest-movie v-if="!moviesLoading" :movie="latestMovie"></latest-movie>
+    <LatestTv v-if="!tvSeriesLoading" :tv="latestTv"></LatestTv>
     <div v-else class="text-center my-6">
       <purple-spinner> </purple-spinner>
     </div>
@@ -48,41 +48,41 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { Carousel, Slide } from "vue-carousel";
-import MoviePreview from "../components/movies/MoviePreview";
-import PurpleSpinner from "../components/loader/PurpleSpinner";
-import LatestMovie from "../components/movies/LatestMovie";
+import TvPreview from "../components/tv_series/TvPreview.vue";
+import PurpleSpinner from "../components/loader/PurpleSpinner.vue";
+import LatestTv from "../components/tv_series/LatestTv.vue";
 
 export default {
-  name: "Home",
+  name: "TvHome",
   computed: {
     ...mapGetters([
       "languageCurrent",
-      "trending",
-      "latestMovie",
-      "moviesLoading",
+      "trendingTv",
+      "latestTv",
+      "tvSeriesLoading",
     ]),
   },
   methods: {
     ...mapActions({
-      fetchLatestMovie: "fetchLatestMovie",
-      fetchTrending: "fetchTrending",
+      fetchLatestTv: "fetchLatestTv",
+      fetchTrendingTv: "fetchTrendingTv",
     }),
   },
   watch: {
     languageCurrent: function () {
-      this.fetchTrending();
-      this.fetchLatestMovie();
+      this.fetchTrendingTv();
+      this.fetchLatestTv();
     },
   },
   created() {
-    this.fetchTrending();
-    this.fetchLatestMovie();
+    this.fetchTrendingTv();
+    this.fetchLatestTv();
   },
   components: {
+    TvPreview,
+    LatestTv,
     Carousel,
     Slide,
-    MoviePreview,
-    LatestMovie,
     PurpleSpinner,
   },
 };

@@ -3,7 +3,7 @@ import languages from "./languages";
 
 const state = {
   movie: [],
-  credits: {
+  movieCredits: {
     cast: [],
   },
   loading: false,
@@ -16,16 +16,16 @@ const mutations = {
     state.movie = movie;
   },
   SET_MOVIE_CREDITS(state, { credits }) {
-    state.credits = credits;
+    state.movieCredits = credits;
   },
   SET_MOVIE_LOADING(state, { loading }) {
     state.loading = loading;
   },
   SET_MOVIE_VIDEOS(state, { videos }) {
-    state.videos = videos;
+    state.tvVideos = videos;
   },
   SET_MOVIE_VIDEOS_LOADING(state, { videosLoad }) {
-    state.videosLoad = videosLoad;
+    state.tvVideosLoad = videosLoad;
   },
 };
 
@@ -105,16 +105,16 @@ const getters = {
     return state.movie;
   },
   credits: (state) => {
-    return state.credits;
+    return state.movieCredits;
   },
   movieLoading: (state) => {
     return state.loading;
   },
   movieVideos: (state) => {
-    return state.videos;
+    return state.tvVideos;
   },
   movieVideosLoad: (state) => {
-    return state.videosLoad;
+    return state.tvVideosLoad;
   },
 };
 

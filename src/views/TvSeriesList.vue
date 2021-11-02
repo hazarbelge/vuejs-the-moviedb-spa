@@ -1,14 +1,14 @@
 <template>
-  <div class="movies-list">
+  <div class="tv-series-list">
     <div class="flex flex-wrap mx-12 justify-between">
-      <movie-preview
-        v-for="(movie, index) in movies"
+      <tv-preview
+        v-for="(tv, index) in tvSeries"
         v-bind:key="index"
-        v-bind:movie="movie"
+        v-bind:tv="tv"
         class="w-1/3 sm:w-full lg:w-1/3 flex mb-16 px-4"
-      ></movie-preview>
+      ></tv-preview>
     </div>
-    <div v-if="!moviesLoading" class="text-center my-6">
+    <div v-if="!tvSeriesLoading" class="text-center my-6">
       <button
         @click="loadNextPage"
         class="
@@ -36,33 +36,33 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import MoviePreview from "../../components/movies/MoviePreview.vue";
-import PurpleSpinner from "../loader/PurpleSpinner";
+import PurpleSpinner from "../components/loader/PurpleSpinner";
+import TvPreview from "../components/tv_series/TvPreview";
 
 export default {
-  name: "MoviesList",
+  name: "TvSeriesList",
   computed: {
-    ...mapGetters(["movies", "languageCurrent", "moviesPage", "moviesLoading"]),
+    ...mapGetters(["tvSeries", "languageCurrent", "tvPage", "tvSeriesLoading"]),
   },
   methods: {
     ...mapActions({
-      fetchMovies: "fetchMovies",
+      fetchTvSeries: "fetchTvSeries",
     }),
     loadNextPage() {
-      this.fetchMovies([this.$route.params.listType, this.moviesPage + 1]);
+      this.fetchTvSeries([this.$route.params.listType, this.tvPage + 1]);
     },
   },
   watch: {
     languageCurrent: function () {
-      this.fetchMovies([this.$route.params.listType]);
+      this.fetchTvSeries([this.$route.params.listType]);
     },
   },
   created() {
-    this.fetchMovies([this.$route.params.listType]);
+    this.fetchTvSeries([this.$route.params.listType]);
   },
   components: {
+    TvPreview,
     PurpleSpinner,
-    MoviePreview,
   },
 };
 </script>

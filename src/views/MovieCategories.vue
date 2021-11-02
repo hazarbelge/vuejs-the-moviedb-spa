@@ -1,13 +1,13 @@
 <template>
-  <div class="categories">
+  <div class="movie_categories">
     <div class="flex flex-wrap -mx-2">
       <div
-        v-for="(list, index) in lists"
+        v-for="(list, index) in movieLists"
         :key="index"
         class="w-1/3 sm:w-1/3 flex-col text-gray-700 text-center px-2 mb-8"
       >
         <router-link
-          :to="/categories/ + list.link"
+          :to="/movie_categories/ + list.link"
           class="
             block
             bg-gray-400
@@ -22,7 +22,7 @@
           {{ list.label }}</router-link
         >
         <router-link
-          :to="/categories/ + list.link"
+          :to="/movie_categories/ + list.link"
           class="flex flex-wrap w-full"
         >
           <clazy-load
@@ -56,7 +56,7 @@
           </clazy-load>
         </router-link>
         <router-link
-          :to="/categories/ + list.link"
+          :to="/movie_categories/ + list.link"
           class="
             block
             bg-gray-400
@@ -80,13 +80,13 @@ import { mapActions, mapGetters } from "vuex";
 import { imageChecker } from "../mixins";
 
 export default {
-  name: "Categories",
+  name: "MovieCategories",
   computed: {
-    ...mapGetters(["languageCurrent", "lists"]),
+    ...mapGetters(["languageCurrent", "movieLists"]),
   },
   methods: {
     ...mapActions({
-      fetchListsData: "fetchListsData",
+      fetchListsData: "fetchMovieListsData",
     }),
   },
   watch: {
