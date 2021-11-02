@@ -24,7 +24,7 @@
 
 <script>
 import { imageChecker, emptyStringChecker } from "@/mixins";
-import PurpleSpinner from "../loader/PurpleSpinner";
+import PurpleSpinner from "../general/PurpleSpinner";
 
 export default {
   name: "ActorPreview",

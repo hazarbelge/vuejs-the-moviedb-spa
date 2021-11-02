@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-purple-900 shadow-md mb-4">
+  <div class="bg-indigo-900 shadow-md mb-4">
     <div class="container mx-auto">
       <nav class="flex items-center justify-between flex-wrap p-3">
         <div class="flex justify-around">
@@ -22,8 +22,8 @@
               text-white
             "
           >
-            <span class="font-bold text-xl tracking-tight m-auto"
-              >The Movie DB API - VueJS</span
+            <a href="#" class="font-bold text-xl tracking-tight m-auto"
+              >The Movie DB SPA - VueJS</a
             >
           </div>
         </div>

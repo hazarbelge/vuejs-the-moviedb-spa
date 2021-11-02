@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { imageChecker } from "../../mixins";
+import { imageChecker } from "../../../mixins";
 
 export default {
   name: "LatestTv",
