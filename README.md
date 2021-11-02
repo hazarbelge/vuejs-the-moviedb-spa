@@ -3,6 +3,6 @@
 
 **STEPS**
 
-**1-** Change .env.example filename to .env
+**1-** Change .env.example filename to .env.local
 
-**2-** Copy and paste your api to <YOUR_API_KEY> section in .env file
+**2-** Copy and paste your api to <YOUR_API_KEY> section in .env.local file
